@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cargar Imagen</title>
-  <script type="module" src="./app/mainx.js"></script>
+  <title>Cargar Poemas</title>
+  <script type="module" src="./app/mainx2.js"></script>
   <link rel="stylesheet" href="./estilos/estilacho.css"/>
   <link rel="stylesheet" href="./estilos/mediaquery.css"/>
   <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
@@ -31,7 +31,7 @@
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">Iniciar sesión</a>
           </li>
           <li class="nav-item logged-out">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Registrate</a>
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Regístrate</a>
           </li>
           <li class="nav-item logged-in">
             <a class="nav-link " href="#" id="logOut">Cerrar sesión</a>
@@ -115,19 +115,21 @@
 
 <!--formulario de carga-->
   <div class="card">
-      <div class="task-content">
-        <form id="postForm">
+      <div class="task-content-poamas">
+        <form id="postFormPoamas">
           <label for="form-content">Contenido:</label>
           <textarea class="form-control mb-6" id="form-content" required></textarea>
-          <label for="form-imagen">Cargar imagen:</label>
-          <input class="form-control mb-6" type="file" name="file" id="form-imagen" accept="filename/*.jpg,*.git, *.pnp" required>
+          <label for="form-imagen">Cargar archivo:</label>
+          <input class="form-control mb-6" type="file" name="file" id="form-poema" accept="filename/*.pdf,*.text, *.docx" multiple required>
+          <label for="form-imagen">Cargar imagen de portada:</label>
+          <input class="form-control mb-6" type="file" name="file" id="form-imagen" accept="filename/*.jpg,*.git, *.pnp">
           <button class="btn btn-primary" type="submit">enviar</button>
         </form>
       </div>
    </div>   
       <!--contenido disponible donde se publicaran los posts-->
       <div>
-        <ul id="posts"></ul>
+        <ul id="publicacionDePoemas"></ul>
       </div>
       <div>
         <ul>
