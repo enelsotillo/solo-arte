@@ -1,8 +1,8 @@
-const postsList = document.getElementById("Poemas");
-const postForm = document.getElementById("postFormPoamas");
-import { enviarPost, loadPosts } from "./post.js";
+const postsList = document.getElementById("videos");
+const postForm = document.getElementById("postForm");
+import { enviarVideos, loadVideos } from "./postVideos.js";
 import { uploadVideos, uploadVideosURL, deleteFotos } from "./storage.js";
-import { deleteTask, onGetTasks, getTask, updatePost, auth } from "./firebase.js";
+import { deleteTask, onGetTasksVideos, getTask, updatePost, auth, deleteTaskVideos } from "./firebase.js";
 
 // firebase utiliza querySnapshot esto significa
 // registro que existen esta el momento
@@ -10,22 +10,22 @@ let editStatus = false;
 let id="";
 window.addEventListener("DOMContentLoaded", async () => {
   //const posts = await loadPosts();
-  onGetTasks((querySnapshot) =>{
+  onGetTasksVideos((querySnapshot) =>{
   
   querySnapshot.forEach((post) => {
     const publication = post.data();
-    console.log(post.data());
+    console.log(publication);
     postsList.innerHTML +=`
-    <div class="gallery">
-      <a target="_blank" href="${publication.imagen ? publication.imagen : ''}" alt="mi foto" style="width: 10rem">
-      <img src="${publication.imagen ? publication.imagen : ''}" alt="mi foto" style="width: 100%" style="height: 70%" />
-      </a>
-      <div class="desc">${publication.content}</div>
+    <div>
+        <video controls>
+            <source src="${publication.imagen ? publication.imagen : "" } style = "type: video/mp4" style = "width:280%" style= "height:450%">
+            <source src="${publication.imagen ? publication.imagen : "" } style = "type: video/ogg" style = "width:280%" style= "height:450%">
+        </video>
+        <div class="titulo-video">
+          <h5>${publication.content}</h5>
+        </div>
     </div>
     `;
   });
-
   });
-  
 });
-

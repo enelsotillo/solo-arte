@@ -1,9 +1,9 @@
 
 const postsList = document.getElementById("videos");
 const postForm = document.getElementById("postForm");
-import { enviarVideos, loadPosts } from "./postVideos.js";
-import { uploadImage, uploadImageURL, deleteFotos } from "./storage.js";
-import { deleteTask, onGetTasks, getTask, updatePost, auth } from "./firebase.js";
+import { enviarVideos, loadVideos } from "./postVideos.js";
+import { uploadVideos, uploadVideosURL, deleteFotos } from "./storage.js";
+import { deleteTask, onGetTasksVideos, getTask, updatePost, auth, deleteTaskVideos } from "./firebase.js";
 
 // firebase utiliza querySnapshot esto significa
 // registro que existen esta el momento
@@ -11,22 +11,25 @@ let editStatus = false;
 let id="";
 window.addEventListener("DOMContentLoaded", async () => {
   //const posts = await loadPosts();
-  onGetTasks((querySnapshot) =>{
+  onGetTasksVideos((querySnapshot) =>{
   
   querySnapshot.forEach((post) => {
     const publication = post.data();
-    console.log(post.data());
+    console.log(publication);
     postsList.innerHTML +=`
     <div class="card card-body mb-2 border-primary">
-      <a target="_blank" href="${publication.imagen ? publication.imagen : ''}" alt="mi foto" style="width: 10rem">
-      <img src="${publication.imagen ? publication.imagen : ''}" alt="mi foto" style="width: 100%" style="height: 50%" />
-      </a>
-      <h5>${publication.content}</h5>
-      <div>
-      <button class="btn-delete btn btn-primary" data-id="${post.id}" data-imagen="${publication.imagen}">Delete</button>
-      <button class="btn-edit btn btn-primary" data-id="${post.id}" data-imagen="${publication.imagen}">Edit</button>
-      </div>
-    </div>
+      <div class="grid-item">
+          <video controls>
+              <source src="${publication.imagen ? publication.imagen : "" } style = "type: video/mp4" style = "width:60" style= "height:30">
+              <source src="${publication.imagen ? publication.imagen : "" } style = "type: video/ogg" style = "width:60" style= "height:30">
+          </video>
+            <h5>${publication.content}</h5>
+            <div>
+            <button class="btn-delete btn btn-primary" data-id="${post.id}" data-imagen="${publication.imagen}">Delete</button>
+            <button class="btn-edit btn btn-primary" data-id="${post.id}" data-imagen="${publication.nombre}">Edit</button>
+            </div>
+          </div>
+      </div>     
     `;
   });
 
@@ -37,7 +40,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         btn.addEventListener('click', ({target: {dataset}}) => {
           console.log(dataset);
           alert("Eliminado....");
-          deleteTask(dataset.id); //llamado al modulo del post 
+          deleteTaskVideos(dataset.id); //llamado al modulo del post 
           //deleteFotos(dataset.imagen); //llamado al modulo starage
         });
       });
@@ -67,14 +70,14 @@ window.addEventListener("DOMContentLoaded", async () => {
 postForm.addEventListener("submit", async (e) => {
   //console.log(nombreFotos);
   e.preventDefault();
-   const inputFile = document.getElementById('form-imagen')
+   const inputFile = document.getElementById('form-videos')
    let post = {
      content: postForm["form-content"].value,
      
    }
   if(inputFile.files[0]){
-     const result = await uploadImage(inputFile.files[0]);
-     const url = await uploadImageURL(result.ref);
+     const result = await uploadVideos(inputFile.files[0]);
+     const url = await uploadVideosURL(result.ref);
      const nombre = result.ref ;
      //console.log(nombrer.name);
      //console.log(url);
