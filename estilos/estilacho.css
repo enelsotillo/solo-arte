@@ -114,9 +114,9 @@ h1 {
 
 .poemas {
   margin: 2em 1em 1em 5em;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 5px;
   padding: 2em;
   }
@@ -124,6 +124,7 @@ h1 {
 
 div.gallery {
   margin: 5px;
+  margin-left: 7%;
   border: 1px solid #800080;
   float: left;
   width: 12em;
@@ -138,7 +139,7 @@ div.gallery:hover {
   
 div.gallery img {
   width: 100%;
-  height: 220px;
+  height: 13rem;
   transition: transform .2s;
   }
 
@@ -152,22 +153,23 @@ div.desc {
   text-align: center;
   }
 
-.main-videos {
-  margin: 1em 1em 1em 3.5em;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+ main .main-videos {
+  margin: 1em 1em 1em 3.5em; 
+  display:flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr; 
   grid-gap: 2em;
-  
+  flex-direction: column;
   }
 
-.videos {
-  margin: 1em;
-  display: flexbox;
-  flex-direction: column;
-  grid-gap: 3px;
-  padding: 0.5em;
 
+.videos {
+  margin: 3em;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  flex-direction: column;
+  grid-gap: 2px;
+  padding: 1em;
 }
 
 .titulo-video {
@@ -294,10 +296,12 @@ div.desc {
   width: 80%;
   height: auto;
   left: 2%;
-  top: ;
 }
-#posts{
-
+.card{
+  padding-top: 2%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row: 2fr;
 }
 
   

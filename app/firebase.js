@@ -39,11 +39,17 @@ export const onGetTasks = (callback) =>{
 export const getTasks = () => getDocs(collection(db, 'posts')) ;
 //actualizar
 export const updatePost = (id, newPost) => {updateDoc(doc(db, 'posts', id), newPost)};
+
+
 //consultar poemas
 export const onGetTasksPoemas = (callback) =>{
   onSnapshot(collection(db, "postsPoemas"), callback);
 }
+
+
 //consultar videos
 export const onGetTasksVideos = (callback) =>{
   onSnapshot(collection(db, "postsVideos"), callback);
 }
+export const deleteTaskVideos = (id) => deleteDoc(doc(db, "postsVideos", id));
+//editar

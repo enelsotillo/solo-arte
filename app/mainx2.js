@@ -17,9 +17,9 @@ window.addEventListener("DOMContentLoaded", async () => {
     const publication = post.data();
     console.log(post.data());
     postsList.innerHTML +=`
-    <div class="card card-body mb-2 border-primary">
-      <a target="_blank" href="${publication.imagen ? publication.imagen : ''}" alt="mi foto" style="width: 10rem">
-      <img src="${publication.imagen ? publication.imagen : ''}" alt="mi libro de poemas" style="width: 100%" style="height: 50%" />
+    <div class="card mb-3 card-body border-primary card-img-top" style="max-width: 20rem" style="max-height: 40rem">
+      <a target="_blank" href="${publication.imagen ? publication.imagen : ''}" style="width: 18rem" style="height: 20rem" download>Descargar en DPF
+      <object type="application/pdf" data="${publication.imagen ? publication.imagen : ''}" style="width: 18rem" style="height: 20rem"></object>
       </a>
       <h5>${publication.content}</h5>
       <div>
@@ -82,16 +82,6 @@ postForm.addEventListener("submit", async (e) => {
      post.imagen = url;
      post.nombre = nombrePoema.name;
   }
-  if(inputImgen.files[1]){
-    const result2 = await uploadPoemas(inputFile.files[1]);
-    const url2 = await uploadPoemasURL(result2.ref);
-    const nombrePortada = result2.ref ;
-    //console.log(nombrer.name);
-    //console.log(url);
-    post.imagen = url2;
-    post.nombre = nombrePortada.name;
- }
- 
     if(!editStatus){
       enviarPoemas(post);
       //console.log(post);
