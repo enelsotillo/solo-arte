@@ -8,7 +8,7 @@ export const enviarVideos = async (post) =>  {
  }
  
  //Optener una consulta asincrona con la base de datos
- // en pagina del front o pagina de inicio
+ // en la pagina del front o pagina de inicio
  export const loadVideos = async () => {
      const querySnapshot = await getDocs(collection(db, 'postsVideos'));
      const posts = querySnapshot.docs.map(doc => doc.data())

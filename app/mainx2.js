@@ -3,7 +3,7 @@ const postsList = document.getElementById("publicacionDePoemas");
 const postForm = document.getElementById("postFormPoamas");
 import { enviarPoemas, loadPoemas } from "./postPoema.js";
 import { uploadImage, uploadImageURL, deleteFotos, uploadPoemas, uploadPoemasURL } from "./storage.js";
-import { deleteTask, onGetTasksPoemas, getTask, updatePost, auth } from "./firebase.js";
+import { deleteTaskPoema, onGetTasksPoemas, getTask, updatePost, auth } from "./firebase.js";
 
 // firebase utiliza querySnapshot esto significa
 // registro que existen esta el momento
@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         btn.addEventListener('click', ({target: {dataset}}) => {
           console.log(dataset);
           alert("Eliminado....");
-          deleteTask(dataset.id); //llamado al modulo del post 
+          deleteTaskPoema(dataset.id); //llamado al modulo del post 
           //deleteFotos(dataset.imagen); //llamado al modulo starage
         });
       });

@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       </a>
       <h5>${publication.content}</h5>
       <div>
-      <button class="btn-delete btn btn-primary" data-id="${post.id}" data-imagen="${publication.imagen}">Delete</button>
+      <button class="btn-delete btn btn-primary" data-id="${post.id}" data-imagen="${publication.imagen}">Eliminar</button>
       <button class="btn-edit btn btn-primary" data-id="${post.id}" data-imagen="${publication.imagen}">Edit</button>
       </div>
     </div>

@@ -15,7 +15,7 @@ const signUpFrom = document.querySelector("#signUp-form");
            const signupModal = document.querySelector('#signupModal');
            const modal = bootstrap.Modal.getInstance(signupModal);
            modal.hide()
-           showMessage("Welcome: " + createUser.user.email)
+           showMessage("Bienvenido: " + createUser.user.email)
 
         } catch(error){
             //error.code arroga errores uniformes o llamados estandar 

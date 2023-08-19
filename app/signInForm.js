@@ -15,7 +15,7 @@ signInForm.addEventListener('submit', async (e) => {
         console.log(userRegister);
         const modal = bootstrap.Modal.getInstance(document.querySelector('#signinModal'))
         modal.hide();
-        showMessage('Welcome: ' + userRegister.user.email);
+        showMessage('Bienvenido: ' + userRegister.user.email);
     } catch (error) {
         if(error.code === "auth/wrong-password"){
             showMessage("Contraseña no existe", "error")

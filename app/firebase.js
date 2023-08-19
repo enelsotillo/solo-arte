@@ -12,12 +12,12 @@ import { getFirestore, collection,
 import { getStorage } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAbK54rNz06CzJmnlZ2dDBFPQLHMMgb3OY",
-  authDomain: "app-solo-arte.firebaseapp.com",
-  projectId: "app-solo-arte",
-  storageBucket: "app-solo-arte.appspot.com",
-  messagingSenderId: "291660379377",
-  appId: "1:291660379377:web:303e7a217779956c3e2550"
+  apiKey: "AIzaSyCH27mEZWNGF7zoJgJTEZL3ANUXhKm2yZo",
+  authDomain: "solo-arte-app-78091.firebaseapp.com",
+  projectId: "solo-arte-app-78091",
+  storageBucket: "solo-arte-app-78091.appspot.com",
+  messagingSenderId: "987371367152",
+  appId: "1:987371367152:web:873e689a43e8cc8efa3035"
 };
 
 // Initialize Firebase
@@ -45,7 +45,8 @@ export const updatePost = (id, newPost) => {updateDoc(doc(db, 'posts', id), newP
 export const onGetTasksPoemas = (callback) =>{
   onSnapshot(collection(db, "postsPoemas"), callback);
 }
-
+//eliminar poema
+export const deleteTaskPoema = (id) => deleteDoc(doc(db, "postsPoemas", id));
 
 //consultar videos
 export const onGetTasksVideos = (callback) =>{

@@ -3,7 +3,7 @@ const postsList = document.getElementById("videos");
 const postForm = document.getElementById("postForm");
 import { enviarVideos, loadVideos } from "./postVideos.js";
 import { uploadVideos, uploadVideosURL, deleteFotos } from "./storage.js";
-import { deleteTask, onGetTasksVideos, getTask, updatePost, auth, deleteTaskVideos } from "./firebase.js";
+import { deleteTaskVideos, onGetTasksVideos, getTask, updatePost, auth } from "./firebase.js";
 
 // firebase utiliza querySnapshot esto significa
 // registro que existen esta el momento
@@ -94,4 +94,4 @@ postForm.addEventListener("submit", async (e) => {
      // console.log("Actualizando Publicación");
     }
     postForm.reset();
-});
+}); 

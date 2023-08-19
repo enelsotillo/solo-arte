@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logout por inactividad</title>
+    <script>
+        let temporizador;
+        const tiempoInactividad = 5 * 60 * 1000; // 5 minutos en milisegundos
+
+        function reiniciarTemporizador() {
+            clearTimeout(temporizador);
+            temporizador = setTimeout(cerrarSesion, tiempoInactividad);
+        }
+
+        function cerrarSesion() {
+            // Aquí va el código para cerrar la sesión
+            alert("Se ha cerrado la sesión debido a inactividad");
+        }
+
+        function agregarEventos() {
+            document.addEventListener("mousemove", reiniciarTemporizador, false);
+            document.addEventListener("keypress", reiniciarTemporizador, false);
+            reiniciarTemporizador();
+        }
+
+        document.addEventListener("DOMContentLoaded", agregarEventos);
+    </script>
+</head>
+<body>
+    <h1>Página de prueba para cerrar sesión por inactividad</h1>
+</body>
+</html>
