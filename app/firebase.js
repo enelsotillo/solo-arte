@@ -45,8 +45,12 @@ export const updatePost = (id, newPost) => {updateDoc(doc(db, 'posts', id), newP
 export const onGetTasksPoemas = (callback) =>{
   onSnapshot(collection(db, "postsPoemas"), callback);
 }
+<<<<<<< HEAD
 //eliminar poema
 export const deleteTaskPoema = (id) => deleteDoc(doc(db, "postsPoemas", id));
+=======
+
+>>>>>>> 9a384b5ef04ad3baf530b9ba2b08bfd9ab3decb8
 
 //consultar videos
 export const onGetTasksVideos = (callback) =>{

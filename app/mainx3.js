@@ -3,7 +3,11 @@ const postsList = document.getElementById("videos");
 const postForm = document.getElementById("postForm");
 import { enviarVideos, loadVideos } from "./postVideos.js";
 import { uploadVideos, uploadVideosURL, deleteFotos } from "./storage.js";
+<<<<<<< HEAD
 import { deleteTaskVideos, onGetTasksVideos, getTask, updatePost, auth } from "./firebase.js";
+=======
+import { deleteTask, onGetTasksVideos, getTask, updatePost, auth, deleteTaskVideos } from "./firebase.js";
+>>>>>>> 9a384b5ef04ad3baf530b9ba2b08bfd9ab3decb8
 
 // firebase utiliza querySnapshot esto significa
 // registro que existen esta el momento

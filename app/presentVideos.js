@@ -10,6 +10,7 @@ let editStatus = false;
 let id = "";
 window.addEventListener("DOMContentLoaded", async () => {
   //const posts = await loadPosts();
+<<<<<<< HEAD
   onGetTasksVideos((querySnapshot) => {
 
     querySnapshot.forEach((post) => {
@@ -28,5 +29,24 @@ window.addEventListener("DOMContentLoaded", async () => {
           </div>    
     `;
     });
+=======
+  onGetTasksVideos((querySnapshot) =>{
+  
+  querySnapshot.forEach((post) => {
+    const publication = post.data();
+    console.log(publication);
+    postsList.innerHTML +=`
+    <div>
+        <video controls>
+            <source src="${publication.imagen ? publication.imagen : "" } style = "type: video/mp4" style = "width:280%" style= "height:450%">
+            <source src="${publication.imagen ? publication.imagen : "" } style = "type: video/ogg" style = "width:280%" style= "height:450%">
+        </video>
+        <div class="titulo-video">
+          <h5>${publication.content}</h5>
+        </div>
+    </div>
+    `;
+  });
+>>>>>>> 9a384b5ef04ad3baf530b9ba2b08bfd9ab3decb8
   });
 });

@@ -114,7 +114,11 @@ h1 {
 
 .poemas {
   margin: 2em 1em 1em 5em;
+<<<<<<< HEAD
   display: flow-root;
+=======
+  display: flex;
+>>>>>>> 9a384b5ef04ad3baf530b9ba2b08bfd9ab3decb8
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 5px;
@@ -153,6 +157,7 @@ div.desc {
   text-align: center;
   }
 
+<<<<<<< HEAD
   .main-videos {
     margin: 1em 1em 1em 3.5em;
     display:grid;
@@ -168,6 +173,27 @@ div.desc {
     text-overflow: ellipsis;
   }
 
+=======
+ main .main-videos {
+  margin: 1em 1em 1em 3.5em; 
+  display:flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr; 
+  grid-gap: 2em;
+  flex-direction: column;
+  }
+
+
+.videos {
+  margin: 3em;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  flex-direction: column;
+  grid-gap: 2px;
+  padding: 1em;
+}
+
+>>>>>>> 9a384b5ef04ad3baf530b9ba2b08bfd9ab3decb8
 .titulo-video {
   text-align:left;
   color: #800080;
